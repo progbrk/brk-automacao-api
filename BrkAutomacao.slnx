@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/BrkAutomacao.API/BrkAutomacao.API.csproj" />
+    <Project Path="src/BrkAutomacao.Application/BrkAutomacao.Application.csproj" />
+    <Project Path="src/BrkAutomacao.Core/BrkAutomacao.Core.csproj" />
+    <Project Path="src/BrkAutomacao.Infrastructure/BrkAutomacao.Infrastructure.csproj" />
+  </Folder>
+</Solution>
