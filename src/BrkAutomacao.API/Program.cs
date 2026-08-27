@@ -1,9 +1,12 @@
 using System.Text;
+using BrkAutomacao.API.Middleware;
+using BrkAutomacao.Application.Behaviors;
 using BrkAutomacao.Core.Interfaces;
 using BrkAutomacao.Infrastructure.Auth;
 using BrkAutomacao.Infrastructure.Persistence;
 using BrkAutomacao.Infrastructure.Persistence.Repositories;
 using FluentValidation;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -64,16 +67,28 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(
     typeof(BrkAutomacao.Application.Commands.Create.CreateLoginCommand.CreateLoginCommand).Assembly));
+builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 
 builder.Services.AddValidatorsFromAssembly(
     typeof(BrkAutomacao.Application.Commands.Create.CreateLoginCommand.CreateLoginCommand).Assembly);
 
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IClienteRepository, ClienteRepository>();
+builder.Services.AddScoped<IProdutoRepository, ProdutoRepository>();
+builder.Services.AddScoped<IParceiroRepository, ParceiroRepository>();
+builder.Services.AddScoped<IFornecedorRepository, FornecedorRepository>();
+builder.Services.AddScoped<IVendaRepository, VendaRepository>();
+builder.Services.AddScoped<IAssinaturaRepository, AssinaturaRepository>();
+builder.Services.AddScoped<ICompraRepository, CompraRepository>();
+builder.Services.AddScoped<IComissaoRepository, ComissaoRepository>();
+builder.Services.AddScoped<IEquipamentoRepository, EquipamentoRepository>();
+builder.Services.AddScoped<IPagamentoRepository, PagamentoRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 
 var app = builder.Build();
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseSwagger();
 app.UseSwaggerUI();
