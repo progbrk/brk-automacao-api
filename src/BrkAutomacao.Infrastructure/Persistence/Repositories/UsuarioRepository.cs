@@ -13,8 +13,8 @@ public class UsuarioRepository : IUsuarioRepository
         _context = context;
     }
 
-    public async Task<Usuario?> GetByEmailAsync(string email)
+    public async Task<Usuario?> GetByLoginAsync(string login)
     {
-        return await _context.Usuarios.FirstOrDefaultAsync(u => u.Email == email && u.Ativo);
+        return await _context.Usuarios.FirstOrDefaultAsync(u => u.Login == login && u.Ativo);
     }
 }

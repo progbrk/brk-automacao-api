@@ -25,15 +25,21 @@ public class TokenService : ITokenService
 
         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(chaveSecreta));
 
+        var claims = new List<Claim>
+        {
+            new(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
+            new(ClaimTypes.Name, usuario.Login),
+            new("nome", usuario.Nome),
+            new("papel", usuario.Papel)
+        };
+        if (!string.IsNullOrWhiteSpace(usuario.Email))
+        {
+            claims.Add(new Claim(ClaimTypes.Email, usuario.Email));
+        }
+
         var tokenDescriptor = new SecurityTokenDescriptor
         {
-            Subject = new ClaimsIdentity(new[]
-            {
-                new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString()),
-                new Claim(ClaimTypes.Email, usuario.Email),
-                new Claim(ClaimTypes.Name, usuario.Nome),
-                new Claim("papel", usuario.Papel)
-            }),
+            Subject = new ClaimsIdentity(claims),
             Expires = DateTime.UtcNow.AddHours(horasExpiracao),
             SigningCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature)
         };

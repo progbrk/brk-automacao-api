@@ -25,20 +25,20 @@ public class CreateLoginCommandHandler : IRequestHandler<CreateLoginCommand, Res
     {
         var response = new ResponseBase<string>();
 
-        var usuario = await _usuarioRepository.GetByEmailAsync(request.Email);
+        var usuario = await _usuarioRepository.GetByLoginAsync(request.Usuario);
         if (usuario is null || usuario.SenhaHash is null ||
             !BCrypt.Net.BCrypt.Verify(request.Senha, usuario.SenhaHash))
         {
-            _logger.LogWarning("Tentativa de login inválida para {Email}", request.Email);
+            _logger.LogWarning("Tentativa de login inválida para {Usuario}", request.Usuario);
             response.Success = false;
-            response.Message = "Email ou senha inválidos.";
+            response.Message = "Usuário ou senha inválidos.";
             return response;
         }
 
         response.Data = _tokenService.GerarToken(usuario);
         response.Message = "Login realizado com sucesso.";
 
-        _logger.LogInformation("Login bem-sucedido para {Email}", request.Email);
+        _logger.LogInformation("Login bem-sucedido para {Usuario}", request.Usuario);
         return response;
     }
 }
