@@ -3,3 +3,5 @@ obj/
 *.user
 .vs/
 .vscode/
+src/BrkAutomacao.API/wwwroot/uploads/produtos/*
+!src/BrkAutomacao.API/wwwroot/uploads/produtos/.gitkeep

@@ -9,6 +9,7 @@ public class Produto
     public decimal? PrecoVenda { get; set; }
     public decimal? CustoBase { get; set; }
     public bool Ativo { get; set; } = true;
+    public string? FotoUrl { get; set; }
     public DateTimeOffset CriadoEm { get; set; }
     public DateTimeOffset AtualizadoEm { get; set; }
     public Guid CriadoPor { get; set; }

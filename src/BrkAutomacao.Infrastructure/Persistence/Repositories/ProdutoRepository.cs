@@ -58,6 +58,21 @@ public class ProdutoRepository : IProdutoRepository
         return existente;
     }
 
+    public async Task<Produto?> AtualizarFotoAsync(Guid id, string? fotoUrl, Guid atualizadoPor)
+    {
+        var existente = await _context.Produtos.FindAsync(id);
+        if (existente is null)
+        {
+            return null;
+        }
+
+        existente.FotoUrl = fotoUrl;
+        existente.AtualizadoPor = atualizadoPor;
+
+        await _context.SaveChangesAsync();
+        return existente;
+    }
+
     public async Task<bool> DeleteAsync(Guid id)
     {
         var existente = await _context.Produtos.FindAsync(id);

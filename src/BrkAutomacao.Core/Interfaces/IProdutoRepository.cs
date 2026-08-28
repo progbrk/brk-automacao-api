@@ -9,5 +9,6 @@ public interface IProdutoRepository
     Task<Produto?> GetByIdAsync(Guid id);
     Task<PaginatedList<Produto>> GetAllPaginatedAsync(int pageIndex, int pageSize);
     Task<Produto?> UpdateAsync(Produto produto);
+    Task<Produto?> AtualizarFotoAsync(Guid id, string? fotoUrl, Guid atualizadoPor);
     Task<bool> DeleteAsync(Guid id);
 }

@@ -109,6 +109,8 @@ if (app.Environment.IsDevelopment())
     app.UseCors(AngularDevCorsPolicy);
 }
 
+app.UseStaticFiles();
+
 app.UseAuthentication();
 app.UseAuthorization();
 
