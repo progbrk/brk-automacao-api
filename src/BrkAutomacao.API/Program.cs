@@ -17,6 +17,15 @@ var builder = WebApplication.CreateBuilder(args);
 var chaveSecreta = builder.Configuration["Jwt:SecretKey"]
     ?? throw new InvalidOperationException("Configuração ausente: Jwt:SecretKey. Defina via user-secrets ou variável de ambiente Jwt__SecretKey.");
 
+const string AngularDevCorsPolicy = "AngularDev";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(AngularDevCorsPolicy, policy =>
+        policy.WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod());
+});
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(x =>
@@ -94,6 +103,11 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseCors(AngularDevCorsPolicy);
+}
 
 app.UseAuthentication();
 app.UseAuthorization();
