@@ -9,7 +9,6 @@ public class CreateAssinaturaCommandValidator : AbstractValidator<CreateAssinatu
     public CreateAssinaturaCommandValidator()
     {
         RuleFor(a => a.ClienteId).NotEmpty();
-        RuleFor(a => a.ProdutoId).NotEmpty();
         RuleFor(a => a.ValorMensal).GreaterThan(0);
         RuleFor(a => a.DiaCobranca).InclusiveBetween((short)1, (short)28);
         RuleFor(a => a.Status).NotEmpty()

@@ -48,7 +48,6 @@ public class AssinaturaRepository : IAssinaturaRepository
 
         existente.ClienteId = assinatura.ClienteId;
         existente.VendaId = assinatura.VendaId;
-        existente.ProdutoId = assinatura.ProdutoId;
         existente.ValorMensal = assinatura.ValorMensal;
         existente.DiaCobranca = assinatura.DiaCobranca;
         existente.Status = assinatura.Status;

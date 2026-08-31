@@ -20,8 +20,8 @@ public class UpdateVendaCommandHandler : IRequestHandler<UpdateVendaCommand, Res
         {
             Id = request.Id,
             ClienteId = request.ClienteId,
-            ProdutoId = request.ProdutoId,
             ParceiroId = request.ParceiroId,
+            Descricao = request.Descricao,
             Valor = request.Valor,
             Status = request.Status,
             DataVenda = request.DataVenda,

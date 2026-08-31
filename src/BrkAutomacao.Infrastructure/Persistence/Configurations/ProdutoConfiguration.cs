@@ -15,7 +15,6 @@ public class ProdutoConfiguration : IEntityTypeConfiguration<Produto>
         builder.Property(p => p.Id).HasColumnName("id");
         builder.Property(p => p.Nome).HasColumnName("nome");
         builder.Property(p => p.Descricao).HasColumnName("descricao");
-        builder.Property(p => p.Tipo).HasColumnName("tipo");
         builder.Property(p => p.PrecoVenda).HasColumnName("preco_venda");
         builder.Property(p => p.CustoBase).HasColumnName("custo_base");
         builder.Property(p => p.Ativo).HasColumnName("ativo");

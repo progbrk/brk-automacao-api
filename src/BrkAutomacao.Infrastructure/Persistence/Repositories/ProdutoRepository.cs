@@ -48,7 +48,6 @@ public class ProdutoRepository : IProdutoRepository
 
         existente.Nome = produto.Nome;
         existente.Descricao = produto.Descricao;
-        existente.Tipo = produto.Tipo;
         existente.PrecoVenda = produto.PrecoVenda;
         existente.CustoBase = produto.CustoBase;
         existente.Ativo = produto.Ativo;

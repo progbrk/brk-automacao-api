@@ -9,7 +9,6 @@ public class UpdateProdutoCommand : IRequest<ResponseBase<Produto>>
     public Guid Id { get; set; }
     public string Nome { get; set; } = null!;
     public string? Descricao { get; set; }
-    public string Tipo { get; set; } = null!;
     public decimal? PrecoVenda { get; set; }
     public decimal? CustoBase { get; set; }
     public bool Ativo { get; set; } = true;

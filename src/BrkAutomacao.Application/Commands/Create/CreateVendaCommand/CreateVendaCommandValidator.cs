@@ -9,7 +9,6 @@ public class CreateVendaCommandValidator : AbstractValidator<CreateVendaCommand>
     public CreateVendaCommandValidator()
     {
         RuleFor(v => v.ClienteId).NotEmpty();
-        RuleFor(v => v.ProdutoId).NotEmpty();
         RuleFor(v => v.Valor).GreaterThan(0);
         RuleFor(v => v.Status).NotEmpty()
             .Must(s => StatusValidos.Contains(s))

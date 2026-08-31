@@ -20,7 +20,6 @@ public class CreateProdutoCommandHandler : IRequestHandler<CreateProdutoCommand,
         {
             Nome = request.Nome,
             Descricao = request.Descricao,
-            Tipo = request.Tipo,
             PrecoVenda = request.PrecoVenda,
             CustoBase = request.CustoBase,
             Ativo = request.Ativo,

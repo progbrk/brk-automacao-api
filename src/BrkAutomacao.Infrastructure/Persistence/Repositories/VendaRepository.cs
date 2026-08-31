@@ -47,8 +47,8 @@ public class VendaRepository : IVendaRepository
         }
 
         existente.ClienteId = venda.ClienteId;
-        existente.ProdutoId = venda.ProdutoId;
         existente.ParceiroId = venda.ParceiroId;
+        existente.Descricao = venda.Descricao;
         existente.Valor = venda.Valor;
         existente.Status = venda.Status;
         existente.DataVenda = venda.DataVenda;

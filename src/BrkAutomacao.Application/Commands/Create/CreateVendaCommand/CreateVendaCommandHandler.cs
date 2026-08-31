@@ -19,8 +19,8 @@ public class CreateVendaCommandHandler : IRequestHandler<CreateVendaCommand, Res
         var venda = new Venda
         {
             ClienteId = request.ClienteId,
-            ProdutoId = request.ProdutoId,
             ParceiroId = request.ParceiroId,
+            Descricao = request.Descricao,
             Valor = request.Valor,
             Status = request.Status,
             DataVenda = request.DataVenda ?? DateOnly.FromDateTime(DateTime.UtcNow),

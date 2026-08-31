@@ -8,7 +8,6 @@ public class CreateAssinaturaCommand : IRequest<ResponseBase<Assinatura>>
 {
     public Guid ClienteId { get; set; }
     public Guid? VendaId { get; set; }
-    public Guid ProdutoId { get; set; }
     public decimal ValorMensal { get; set; }
     public short DiaCobranca { get; set; }
     public string Status { get; set; } = "ativa";
