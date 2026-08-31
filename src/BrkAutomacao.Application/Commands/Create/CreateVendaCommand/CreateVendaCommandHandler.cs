@@ -21,7 +21,6 @@ public class CreateVendaCommandHandler : IRequestHandler<CreateVendaCommand, Res
             ClienteId = request.ClienteId,
             ParceiroId = request.ParceiroId,
             Descricao = request.Descricao,
-            Valor = request.Valor,
             Status = request.Status,
             DataVenda = request.DataVenda ?? DateOnly.FromDateTime(DateTime.UtcNow),
             CriadoPor = request.UsuarioId,

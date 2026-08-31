@@ -6,7 +6,10 @@ public class Venda
     public Guid ClienteId { get; set; }
     public Guid? ParceiroId { get; set; }
     public string? Descricao { get; set; }
+
+    /// <summary>Calculado pelo repositório (soma de VendaItens + VendaServicos) — não é uma coluna do banco.</summary>
     public decimal Valor { get; set; }
+
     public string Status { get; set; } = "orcamento";
     public DateOnly DataVenda { get; set; }
     public DateTimeOffset CriadoEm { get; set; }

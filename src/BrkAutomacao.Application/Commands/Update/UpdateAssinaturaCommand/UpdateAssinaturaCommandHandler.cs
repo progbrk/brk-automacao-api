@@ -21,6 +21,7 @@ public class UpdateAssinaturaCommandHandler : IRequestHandler<UpdateAssinaturaCo
             Id = request.Id,
             ClienteId = request.ClienteId,
             VendaId = request.VendaId,
+            PlanoId = request.PlanoId,
             ValorMensal = request.ValorMensal,
             DiaCobranca = request.DiaCobranca,
             Status = request.Status,

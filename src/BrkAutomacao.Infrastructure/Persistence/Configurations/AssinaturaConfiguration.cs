@@ -15,6 +15,7 @@ public class AssinaturaConfiguration : IEntityTypeConfiguration<Assinatura>
         builder.Property(a => a.Id).HasColumnName("id");
         builder.Property(a => a.ClienteId).HasColumnName("cliente_id");
         builder.Property(a => a.VendaId).HasColumnName("venda_id");
+        builder.Property(a => a.PlanoId).HasColumnName("plano_id");
         builder.Property(a => a.ValorMensal).HasColumnName("valor_mensal");
         builder.Property(a => a.DiaCobranca).HasColumnName("dia_cobranca");
         builder.Property(a => a.Status).HasColumnName("status");

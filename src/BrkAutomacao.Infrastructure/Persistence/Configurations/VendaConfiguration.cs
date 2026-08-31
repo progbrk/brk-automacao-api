@@ -16,7 +16,9 @@ public class VendaConfiguration : IEntityTypeConfiguration<Venda>
         builder.Property(v => v.ClienteId).HasColumnName("cliente_id");
         builder.Property(v => v.ParceiroId).HasColumnName("parceiro_id");
         builder.Property(v => v.Descricao).HasColumnName("descricao");
-        builder.Property(v => v.Valor).HasColumnName("valor");
+        // Não existe coluna "valor" no banco — é calculado em VendaRepository a partir de
+        // VendaItens + VendaServicos.
+        builder.Ignore(v => v.Valor);
         builder.Property(v => v.Status).HasColumnName("status");
         builder.Property(v => v.DataVenda).HasColumnName("data_venda");
         builder.Property(v => v.CriadoEm).HasColumnName("criado_em").ValueGeneratedOnAdd();

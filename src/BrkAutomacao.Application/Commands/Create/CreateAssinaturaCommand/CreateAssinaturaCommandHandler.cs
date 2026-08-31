@@ -20,6 +20,7 @@ public class CreateAssinaturaCommandHandler : IRequestHandler<CreateAssinaturaCo
         {
             ClienteId = request.ClienteId,
             VendaId = request.VendaId,
+            PlanoId = request.PlanoId,
             ValorMensal = request.ValorMensal,
             DiaCobranca = request.DiaCobranca,
             Status = request.Status,

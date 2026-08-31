@@ -5,6 +5,7 @@ public class Assinatura
     public Guid Id { get; set; }
     public Guid ClienteId { get; set; }
     public Guid? VendaId { get; set; }
+    public Guid PlanoId { get; set; }
     public decimal ValorMensal { get; set; }
     public short DiaCobranca { get; set; }
     public string Status { get; set; } = "ativa";

@@ -18,12 +18,20 @@ public class VendaRepository : IVendaRepository
     {
         _context.Vendas.Add(venda);
         await _context.SaveChangesAsync();
+        venda.Valor = 0;
         return venda;
     }
 
     public async Task<Venda?> GetByIdAsync(Guid id)
     {
-        return await _context.Vendas.FindAsync(id);
+        var venda = await _context.Vendas.FindAsync(id);
+        if (venda is null)
+        {
+            return null;
+        }
+
+        venda.Valor = await CalcularValorAsync(id);
+        return venda;
     }
 
     public async Task<PaginatedList<Venda>> GetAllPaginatedAsync(int pageIndex, int pageSize)
@@ -34,6 +42,11 @@ public class VendaRepository : IVendaRepository
             .Skip((pageIndex - 1) * pageSize)
             .Take(pageSize)
             .ToListAsync();
+
+        foreach (var venda in items)
+        {
+            venda.Valor = await CalcularValorAsync(venda.Id);
+        }
 
         return new PaginatedList<Venda>(items, totalCount, pageIndex, pageSize);
     }
@@ -49,12 +62,12 @@ public class VendaRepository : IVendaRepository
         existente.ClienteId = venda.ClienteId;
         existente.ParceiroId = venda.ParceiroId;
         existente.Descricao = venda.Descricao;
-        existente.Valor = venda.Valor;
         existente.Status = venda.Status;
         existente.DataVenda = venda.DataVenda;
         existente.AtualizadoPor = venda.AtualizadoPor;
 
         await _context.SaveChangesAsync();
+        existente.Valor = await CalcularValorAsync(existente.Id);
         return existente;
     }
 
@@ -69,5 +82,18 @@ public class VendaRepository : IVendaRepository
         _context.Vendas.Remove(existente);
         await _context.SaveChangesAsync();
         return true;
+    }
+
+    private async Task<decimal> CalcularValorAsync(Guid vendaId)
+    {
+        var totalItens = await _context.VendaItens
+            .Where(i => i.VendaId == vendaId)
+            .SumAsync(i => (decimal?)i.ValorTotal) ?? 0;
+
+        var totalServicos = await _context.VendaServicos
+            .Where(s => s.VendaId == vendaId)
+            .SumAsync(s => (decimal?)s.ValorTotal) ?? 0;
+
+        return totalItens + totalServicos;
     }
 }
