@@ -15,6 +15,7 @@ public class AppDbContext : DbContext
     public DbSet<Parceiro> Parceiros => Set<Parceiro>();
     public DbSet<Fornecedor> Fornecedores => Set<Fornecedor>();
     public DbSet<Venda> Vendas => Set<Venda>();
+    public DbSet<VendaItem> VendaItens => Set<VendaItem>();
     public DbSet<Assinatura> Assinaturas => Set<Assinatura>();
     public DbSet<Compra> Compras => Set<Compra>();
     public DbSet<Comissao> Comissoes => Set<Comissao>();
