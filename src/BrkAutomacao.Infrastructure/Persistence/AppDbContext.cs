@@ -14,6 +14,7 @@ public class AppDbContext : DbContext
     public DbSet<Produto> Produtos => Set<Produto>();
     public DbSet<Servico> Servicos => Set<Servico>();
     public DbSet<Parceiro> Parceiros => Set<Parceiro>();
+    public DbSet<Colaborador> Colaboradores => Set<Colaborador>();
     public DbSet<Fornecedor> Fornecedores => Set<Fornecedor>();
     public DbSet<Venda> Vendas => Set<Venda>();
     public DbSet<VendaItem> VendaItens => Set<VendaItem>();
@@ -24,6 +25,7 @@ public class AppDbContext : DbContext
     public DbSet<Comissao> Comissoes => Set<Comissao>();
     public DbSet<Equipamento> Equipamentos => Set<Equipamento>();
     public DbSet<Pagamento> Pagamentos => Set<Pagamento>();
+    public DbSet<PagamentoColaborador> PagamentosColaboradores => Set<PagamentoColaborador>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
