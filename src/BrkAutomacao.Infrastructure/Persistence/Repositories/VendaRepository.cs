@@ -18,7 +18,7 @@ public class VendaRepository : IVendaRepository
     {
         _context.Vendas.Add(venda);
         await _context.SaveChangesAsync();
-        venda.Valor = 0;
+        venda.Valor = await CalcularValorAsync(venda.Id, venda.Desconto);
         return venda;
     }
 
@@ -30,7 +30,7 @@ public class VendaRepository : IVendaRepository
             return null;
         }
 
-        venda.Valor = await CalcularValorAsync(id);
+        venda.Valor = await CalcularValorAsync(id, venda.Desconto);
         return venda;
     }
 
@@ -45,7 +45,7 @@ public class VendaRepository : IVendaRepository
 
         foreach (var venda in items)
         {
-            venda.Valor = await CalcularValorAsync(venda.Id);
+            venda.Valor = await CalcularValorAsync(venda.Id, venda.Desconto);
         }
 
         return new PaginatedList<Venda>(items, totalCount, pageIndex, pageSize);
@@ -62,12 +62,13 @@ public class VendaRepository : IVendaRepository
         existente.ClienteId = venda.ClienteId;
         existente.ParceiroId = venda.ParceiroId;
         existente.Descricao = venda.Descricao;
+        existente.Desconto = venda.Desconto;
         existente.Status = venda.Status;
         existente.DataVenda = venda.DataVenda;
         existente.AtualizadoPor = venda.AtualizadoPor;
 
         await _context.SaveChangesAsync();
-        existente.Valor = await CalcularValorAsync(existente.Id);
+        existente.Valor = await CalcularValorAsync(existente.Id, existente.Desconto);
         return existente;
     }
 
@@ -84,7 +85,7 @@ public class VendaRepository : IVendaRepository
         return true;
     }
 
-    private async Task<decimal> CalcularValorAsync(Guid vendaId)
+    private async Task<decimal> CalcularValorAsync(Guid vendaId, decimal desconto)
     {
         var totalItens = await _context.VendaItens
             .Where(i => i.VendaId == vendaId)
@@ -94,6 +95,6 @@ public class VendaRepository : IVendaRepository
             .Where(s => s.VendaId == vendaId)
             .SumAsync(s => (decimal?)s.ValorTotal) ?? 0;
 
-        return totalItens + totalServicos;
+        return Math.Max(0, totalItens + totalServicos - desconto);
     }
 }
