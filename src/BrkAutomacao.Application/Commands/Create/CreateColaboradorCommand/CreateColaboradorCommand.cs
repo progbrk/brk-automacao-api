@@ -8,6 +8,8 @@ public class CreateColaboradorCommand : IRequest<ResponseBase<Colaborador>>
 {
     public string Nome { get; set; } = null!;
     public string? Cargo { get; set; }
+    public string Tipo { get; set; } = "Interno";
+    public string? CpfCnpj { get; set; }
     public string? Telefone { get; set; }
     public string? Email { get; set; }
     public bool Ativo { get; set; } = true;

@@ -21,6 +21,8 @@ public class UpdateColaboradorCommandHandler : IRequestHandler<UpdateColaborador
             Id = request.Id,
             Nome = request.Nome,
             Cargo = request.Cargo,
+            Tipo = request.Tipo,
+            CpfCnpj = request.CpfCnpj,
             Telefone = request.Telefone,
             Email = request.Email,
             Ativo = request.Ativo,

@@ -48,6 +48,8 @@ public class ColaboradorRepository : IColaboradorRepository
 
         existente.Nome = colaborador.Nome;
         existente.Cargo = colaborador.Cargo;
+        existente.Tipo = colaborador.Tipo;
+        existente.CpfCnpj = colaborador.CpfCnpj;
         existente.Telefone = colaborador.Telefone;
         existente.Email = colaborador.Email;
         existente.Ativo = colaborador.Ativo;

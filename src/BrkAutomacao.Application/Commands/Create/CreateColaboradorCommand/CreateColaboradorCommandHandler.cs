@@ -20,6 +20,8 @@ public class CreateColaboradorCommandHandler : IRequestHandler<CreateColaborador
         {
             Nome = request.Nome,
             Cargo = request.Cargo,
+            Tipo = request.Tipo,
+            CpfCnpj = request.CpfCnpj,
             Telefone = request.Telefone,
             Email = request.Email,
             Ativo = request.Ativo,

@@ -15,9 +15,13 @@ public class ColaboradorConfiguration : IEntityTypeConfiguration<Colaborador>
         builder.Property(c => c.Id).HasColumnName("id");
         builder.Property(c => c.Nome).HasColumnName("nome");
         builder.Property(c => c.Cargo).HasColumnName("cargo");
+        builder.Property(c => c.Tipo).HasColumnName("tipo");
+        builder.Property(c => c.CpfCnpj).HasColumnName("cpf_cnpj");
         builder.Property(c => c.Telefone).HasColumnName("telefone");
         builder.Property(c => c.Email).HasColumnName("email");
         builder.Property(c => c.Ativo).HasColumnName("ativo");
+
+        builder.HasIndex(c => c.CpfCnpj).IsUnique();
         builder.Property(c => c.CriadoEm).HasColumnName("criado_em");
         builder.Property(c => c.AtualizadoEm).HasColumnName("atualizado_em");
         builder.Property(c => c.CriadoPor).HasColumnName("criado_por");
