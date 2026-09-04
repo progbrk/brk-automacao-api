@@ -19,7 +19,7 @@ public class UsuarioConfiguration : IEntityTypeConfiguration<Usuario>
         builder.Property(u => u.Papel).HasColumnName("papel");
         builder.Property(u => u.Ativo).HasColumnName("ativo");
         builder.Property(u => u.SenhaHash).HasColumnName("senha_hash");
-        builder.Property(u => u.CriadoEm).HasColumnName("criado_em").ValueGeneratedOnAdd();
+        builder.Property(u => u.CriadoEm).HasColumnName("criado_em");
 
         builder.HasIndex(u => u.Login).IsUnique();
         builder.HasIndex(u => u.Email).IsUnique();

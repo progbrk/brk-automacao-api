@@ -26,7 +26,8 @@ public class UpdateEquipamentoCommandHandler : IRequestHandler<UpdateEquipamento
             IpVpn = request.IpVpn,
             Status = request.Status,
             DataInstalacao = request.DataInstalacao,
-            AtualizadoPor = request.UsuarioId
+            AtualizadoEm = DateTimeOffset.UtcNow,
+            AtualizadoPor = request.UsuarioId,
         };
 
         var atualizado = await _equipamentoRepository.UpdateAsync(equipamento);

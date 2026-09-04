@@ -19,8 +19,8 @@ public class ProdutoConfiguration : IEntityTypeConfiguration<Produto>
         builder.Property(p => p.CustoBase).HasColumnName("custo_base");
         builder.Property(p => p.Ativo).HasColumnName("ativo");
         builder.Property(p => p.FotoUrl).HasColumnName("foto_url");
-        builder.Property(p => p.CriadoEm).HasColumnName("criado_em").ValueGeneratedOnAdd();
-        builder.Property(p => p.AtualizadoEm).HasColumnName("atualizado_em").ValueGeneratedOnAddOrUpdate();
+        builder.Property(p => p.CriadoEm).HasColumnName("criado_em");
+        builder.Property(p => p.AtualizadoEm).HasColumnName("atualizado_em");
         builder.Property(p => p.CriadoPor).HasColumnName("criado_por");
         builder.Property(p => p.AtualizadoPor).HasColumnName("atualizado_por");
     }

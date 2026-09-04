@@ -22,8 +22,8 @@ public class VendaConfiguration : IEntityTypeConfiguration<Venda>
         builder.Ignore(v => v.Valor);
         builder.Property(v => v.Status).HasColumnName("status");
         builder.Property(v => v.DataVenda).HasColumnName("data_venda");
-        builder.Property(v => v.CriadoEm).HasColumnName("criado_em").ValueGeneratedOnAdd();
-        builder.Property(v => v.AtualizadoEm).HasColumnName("atualizado_em").ValueGeneratedOnAddOrUpdate();
+        builder.Property(v => v.CriadoEm).HasColumnName("criado_em");
+        builder.Property(v => v.AtualizadoEm).HasColumnName("atualizado_em");
         builder.Property(v => v.CriadoPor).HasColumnName("criado_por");
         builder.Property(v => v.AtualizadoPor).HasColumnName("atualizado_por");
     }

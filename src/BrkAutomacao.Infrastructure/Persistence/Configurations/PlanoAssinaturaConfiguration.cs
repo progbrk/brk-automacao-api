@@ -17,8 +17,8 @@ public class PlanoAssinaturaConfiguration : IEntityTypeConfiguration<PlanoAssina
         builder.Property(p => p.Descricao).HasColumnName("descricao");
         builder.Property(p => p.ValorMensal).HasColumnName("valor_mensal");
         builder.Property(p => p.Ativo).HasColumnName("ativo");
-        builder.Property(p => p.CriadoEm).HasColumnName("criado_em").ValueGeneratedOnAdd();
-        builder.Property(p => p.AtualizadoEm).HasColumnName("atualizado_em").ValueGeneratedOnAddOrUpdate();
+        builder.Property(p => p.CriadoEm).HasColumnName("criado_em");
+        builder.Property(p => p.AtualizadoEm).HasColumnName("atualizado_em");
         builder.Property(p => p.CriadoPor).HasColumnName("criado_por");
         builder.Property(p => p.AtualizadoPor).HasColumnName("atualizado_por");
     }

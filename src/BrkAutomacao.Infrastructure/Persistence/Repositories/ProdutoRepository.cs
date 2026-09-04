@@ -51,6 +51,7 @@ public class ProdutoRepository : IProdutoRepository
         existente.PrecoVenda = produto.PrecoVenda;
         existente.CustoBase = produto.CustoBase;
         existente.Ativo = produto.Ativo;
+        existente.AtualizadoEm = DateTimeOffset.UtcNow;
         existente.AtualizadoPor = produto.AtualizadoPor;
 
         await _context.SaveChangesAsync();

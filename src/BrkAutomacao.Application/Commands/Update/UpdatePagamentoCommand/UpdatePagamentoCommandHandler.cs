@@ -26,7 +26,8 @@ public class UpdatePagamentoCommandHandler : IRequestHandler<UpdatePagamentoComm
             FormaPagamento = request.FormaPagamento,
             Status = request.Status,
             DataPagamento = request.DataPagamento,
-            AtualizadoPor = request.UsuarioId
+            AtualizadoEm = DateTimeOffset.UtcNow,
+            AtualizadoPor = request.UsuarioId,
         };
 
         var atualizado = await _pagamentoRepository.UpdateAsync(pagamento);

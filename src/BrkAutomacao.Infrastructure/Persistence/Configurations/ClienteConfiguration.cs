@@ -22,8 +22,8 @@ public class ClienteConfiguration : IEntityTypeConfiguration<Cliente>
         builder.Property(c => c.Estado).HasColumnName("estado");
         builder.Property(c => c.Cep).HasColumnName("cep");
         builder.Property(c => c.Observacoes).HasColumnName("observacoes");
-        builder.Property(c => c.CriadoEm).HasColumnName("criado_em").ValueGeneratedOnAdd();
-        builder.Property(c => c.AtualizadoEm).HasColumnName("atualizado_em").ValueGeneratedOnAddOrUpdate();
+        builder.Property(c => c.CriadoEm).HasColumnName("criado_em");
+        builder.Property(c => c.AtualizadoEm).HasColumnName("atualizado_em");
         builder.Property(c => c.CriadoPor).HasColumnName("criado_por");
         builder.Property(c => c.AtualizadoPor).HasColumnName("atualizado_por");
 

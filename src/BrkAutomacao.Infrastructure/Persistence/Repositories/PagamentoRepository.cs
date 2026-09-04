@@ -53,6 +53,7 @@ public class PagamentoRepository : IPagamentoRepository
         existente.FormaPagamento = pagamento.FormaPagamento;
         existente.Status = pagamento.Status;
         existente.DataPagamento = pagamento.DataPagamento;
+        existente.AtualizadoEm = DateTimeOffset.UtcNow;
         existente.AtualizadoPor = pagamento.AtualizadoPor;
 
         await _context.SaveChangesAsync();

@@ -51,6 +51,7 @@ public class ParceiroRepository : IParceiroRepository
         existente.Telefone = parceiro.Telefone;
         existente.Email = parceiro.Email;
         existente.PercentualComissao = parceiro.PercentualComissao;
+        existente.AtualizadoEm = DateTimeOffset.UtcNow;
         existente.AtualizadoPor = parceiro.AtualizadoPor;
 
         await _context.SaveChangesAsync();

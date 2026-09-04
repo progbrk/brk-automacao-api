@@ -24,7 +24,8 @@ public class UpdateComissaoCommandHandler : IRequestHandler<UpdateComissaoComman
             Valor = request.Valor,
             Status = request.Status,
             DataPagamento = request.DataPagamento,
-            AtualizadoPor = request.UsuarioId
+            AtualizadoEm = DateTimeOffset.UtcNow,
+            AtualizadoPor = request.UsuarioId,
         };
 
         var atualizada = await _comissaoRepository.UpdateAsync(comissao);

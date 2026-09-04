@@ -53,6 +53,7 @@ public class EquipamentoRepository : IEquipamentoRepository
         existente.IpVpn = equipamento.IpVpn;
         existente.Status = equipamento.Status;
         existente.DataInstalacao = equipamento.DataInstalacao;
+        existente.AtualizadoEm = DateTimeOffset.UtcNow;
         existente.AtualizadoPor = equipamento.AtualizadoPor;
 
         await _context.SaveChangesAsync();

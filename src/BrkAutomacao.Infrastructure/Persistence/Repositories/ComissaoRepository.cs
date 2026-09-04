@@ -51,6 +51,7 @@ public class ComissaoRepository : IComissaoRepository
         existente.Valor = comissao.Valor;
         existente.Status = comissao.Status;
         existente.DataPagamento = comissao.DataPagamento;
+        existente.AtualizadoEm = DateTimeOffset.UtcNow;
         existente.AtualizadoPor = comissao.AtualizadoPor;
 
         await _context.SaveChangesAsync();

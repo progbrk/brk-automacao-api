@@ -18,8 +18,8 @@ public class ColaboradorConfiguration : IEntityTypeConfiguration<Colaborador>
         builder.Property(c => c.Telefone).HasColumnName("telefone");
         builder.Property(c => c.Email).HasColumnName("email");
         builder.Property(c => c.Ativo).HasColumnName("ativo");
-        builder.Property(c => c.CriadoEm).HasColumnName("criado_em").ValueGeneratedOnAdd();
-        builder.Property(c => c.AtualizadoEm).HasColumnName("atualizado_em").ValueGeneratedOnAddOrUpdate();
+        builder.Property(c => c.CriadoEm).HasColumnName("criado_em");
+        builder.Property(c => c.AtualizadoEm).HasColumnName("atualizado_em");
         builder.Property(c => c.CriadoPor).HasColumnName("criado_por");
         builder.Property(c => c.AtualizadoPor).HasColumnName("atualizado_por");
     }

@@ -27,7 +27,8 @@ public class UpdateCompraCommandHandler : IRequestHandler<UpdateCompraCommand, R
             Frete = request.Frete,
             Imposto = request.Imposto,
             DataCompra = request.DataCompra,
-            AtualizadoPor = request.UsuarioId
+            AtualizadoEm = DateTimeOffset.UtcNow,
+            AtualizadoPor = request.UsuarioId,
         };
 
         var atualizada = await _compraRepository.UpdateAsync(compra);

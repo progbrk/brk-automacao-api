@@ -50,6 +50,7 @@ public class FornecedorRepository : IFornecedorRepository
         existente.Contato = fornecedor.Contato;
         existente.Telefone = fornecedor.Telefone;
         existente.Email = fornecedor.Email;
+        existente.AtualizadoEm = DateTimeOffset.UtcNow;
         existente.AtualizadoPor = fornecedor.AtualizadoPor;
 
         await _context.SaveChangesAsync();

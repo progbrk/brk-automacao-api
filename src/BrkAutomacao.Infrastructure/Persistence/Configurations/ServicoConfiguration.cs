@@ -17,8 +17,8 @@ public class ServicoConfiguration : IEntityTypeConfiguration<Servico>
         builder.Property(s => s.Descricao).HasColumnName("descricao");
         builder.Property(s => s.Preco).HasColumnName("preco");
         builder.Property(s => s.Ativo).HasColumnName("ativo");
-        builder.Property(s => s.CriadoEm).HasColumnName("criado_em").ValueGeneratedOnAdd();
-        builder.Property(s => s.AtualizadoEm).HasColumnName("atualizado_em").ValueGeneratedOnAddOrUpdate();
+        builder.Property(s => s.CriadoEm).HasColumnName("criado_em");
+        builder.Property(s => s.AtualizadoEm).HasColumnName("atualizado_em");
         builder.Property(s => s.CriadoPor).HasColumnName("criado_por");
         builder.Property(s => s.AtualizadoPor).HasColumnName("atualizado_por");
     }

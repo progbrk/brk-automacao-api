@@ -20,8 +20,8 @@ public class PagamentoConfiguration : IEntityTypeConfiguration<Pagamento>
         builder.Property(p => p.FormaPagamento).HasColumnName("forma_pagamento");
         builder.Property(p => p.Status).HasColumnName("status");
         builder.Property(p => p.DataPagamento).HasColumnName("data_pagamento");
-        builder.Property(p => p.CriadoEm).HasColumnName("criado_em").ValueGeneratedOnAdd();
-        builder.Property(p => p.AtualizadoEm).HasColumnName("atualizado_em").ValueGeneratedOnAddOrUpdate();
+        builder.Property(p => p.CriadoEm).HasColumnName("criado_em");
+        builder.Property(p => p.AtualizadoEm).HasColumnName("atualizado_em");
         builder.Property(p => p.CriadoPor).HasColumnName("criado_por");
         builder.Property(p => p.AtualizadoPor).HasColumnName("atualizado_por");
     }

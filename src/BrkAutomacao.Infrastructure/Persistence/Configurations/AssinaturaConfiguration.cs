@@ -21,8 +21,8 @@ public class AssinaturaConfiguration : IEntityTypeConfiguration<Assinatura>
         builder.Property(a => a.Status).HasColumnName("status");
         builder.Property(a => a.DataInicio).HasColumnName("data_inicio");
         builder.Property(a => a.DataFim).HasColumnName("data_fim");
-        builder.Property(a => a.CriadoEm).HasColumnName("criado_em").ValueGeneratedOnAdd();
-        builder.Property(a => a.AtualizadoEm).HasColumnName("atualizado_em").ValueGeneratedOnAddOrUpdate();
+        builder.Property(a => a.CriadoEm).HasColumnName("criado_em");
+        builder.Property(a => a.AtualizadoEm).HasColumnName("atualizado_em");
         builder.Property(a => a.CriadoPor).HasColumnName("criado_por");
         builder.Property(a => a.AtualizadoPor).HasColumnName("atualizado_por");
     }

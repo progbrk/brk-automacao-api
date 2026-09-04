@@ -19,8 +19,8 @@ public class VendaServicoConfiguration : IEntityTypeConfiguration<VendaServico>
         builder.Property(i => i.PrecoUnitario).HasColumnName("preco_unitario");
         // GENERATED ALWAYS AS (quantidade * preco_unitario) STORED no Postgres.
         builder.Property(i => i.ValorTotal).HasColumnName("valor_total").ValueGeneratedOnAddOrUpdate();
-        builder.Property(i => i.CriadoEm).HasColumnName("criado_em").ValueGeneratedOnAdd();
-        builder.Property(i => i.AtualizadoEm).HasColumnName("atualizado_em").ValueGeneratedOnAddOrUpdate();
+        builder.Property(i => i.CriadoEm).HasColumnName("criado_em");
+        builder.Property(i => i.AtualizadoEm).HasColumnName("atualizado_em");
         builder.Property(i => i.CriadoPor).HasColumnName("criado_por");
         builder.Property(i => i.AtualizadoPor).HasColumnName("atualizado_por");
     }

@@ -65,6 +65,7 @@ public class VendaRepository : IVendaRepository
         existente.Desconto = venda.Desconto;
         existente.Status = venda.Status;
         existente.DataVenda = venda.DataVenda;
+        existente.AtualizadoEm = DateTimeOffset.UtcNow;
         existente.AtualizadoPor = venda.AtualizadoPor;
 
         await _context.SaveChangesAsync();

@@ -18,8 +18,8 @@ public class ComissaoConfiguration : IEntityTypeConfiguration<Comissao>
         builder.Property(c => c.Valor).HasColumnName("valor");
         builder.Property(c => c.Status).HasColumnName("status");
         builder.Property(c => c.DataPagamento).HasColumnName("data_pagamento");
-        builder.Property(c => c.CriadoEm).HasColumnName("criado_em").ValueGeneratedOnAdd();
-        builder.Property(c => c.AtualizadoEm).HasColumnName("atualizado_em").ValueGeneratedOnAddOrUpdate();
+        builder.Property(c => c.CriadoEm).HasColumnName("criado_em");
+        builder.Property(c => c.AtualizadoEm).HasColumnName("atualizado_em");
         builder.Property(c => c.CriadoPor).HasColumnName("criado_por");
         builder.Property(c => c.AtualizadoPor).HasColumnName("atualizado_por");
 

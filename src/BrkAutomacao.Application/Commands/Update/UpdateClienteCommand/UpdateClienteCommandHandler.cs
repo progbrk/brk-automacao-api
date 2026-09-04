@@ -28,7 +28,8 @@ public class UpdateClienteCommandHandler : IRequestHandler<UpdateClienteCommand,
             Estado = request.Estado,
             Cep = request.Cep,
             Observacoes = request.Observacoes,
-            AtualizadoPor = request.UsuarioId
+            AtualizadoEm = DateTimeOffset.UtcNow,
+            AtualizadoPor = request.UsuarioId,
         };
 
         var atualizado = await _clienteRepository.UpdateAsync(cliente);

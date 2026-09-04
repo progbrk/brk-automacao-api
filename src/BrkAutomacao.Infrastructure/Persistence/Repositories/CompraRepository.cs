@@ -54,6 +54,7 @@ public class CompraRepository : ICompraRepository
         existente.Frete = compra.Frete;
         existente.Imposto = compra.Imposto;
         existente.DataCompra = compra.DataCompra;
+        existente.AtualizadoEm = DateTimeOffset.UtcNow;
         existente.AtualizadoPor = compra.AtualizadoPor;
 
         await _context.SaveChangesAsync();

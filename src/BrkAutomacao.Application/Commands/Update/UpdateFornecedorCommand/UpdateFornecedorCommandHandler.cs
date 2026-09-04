@@ -23,7 +23,8 @@ public class UpdateFornecedorCommandHandler : IRequestHandler<UpdateFornecedorCo
             Contato = request.Contato,
             Telefone = request.Telefone,
             Email = request.Email,
-            AtualizadoPor = request.UsuarioId
+            AtualizadoEm = DateTimeOffset.UtcNow,
+            AtualizadoPor = request.UsuarioId,
         };
 
         var atualizado = await _fornecedorRepository.UpdateAsync(fornecedor);

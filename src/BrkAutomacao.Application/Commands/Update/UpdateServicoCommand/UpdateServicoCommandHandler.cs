@@ -23,7 +23,8 @@ public class UpdateServicoCommandHandler : IRequestHandler<UpdateServicoCommand,
             Descricao = request.Descricao,
             Preco = request.Preco,
             Ativo = request.Ativo,
-            AtualizadoPor = request.UsuarioId
+            AtualizadoEm = DateTimeOffset.UtcNow,
+            AtualizadoPor = request.UsuarioId,
         };
 
         var atualizado = await _servicoRepository.UpdateAsync(servico);

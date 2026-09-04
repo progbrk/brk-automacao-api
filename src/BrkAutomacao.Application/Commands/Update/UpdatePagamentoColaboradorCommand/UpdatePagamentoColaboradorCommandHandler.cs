@@ -24,7 +24,8 @@ public class UpdatePagamentoColaboradorCommandHandler : IRequestHandler<UpdatePa
             Valor = request.Valor,
             Status = request.Status,
             DataPagamento = request.DataPagamento,
-            AtualizadoPor = request.UsuarioId
+            AtualizadoEm = DateTimeOffset.UtcNow,
+            AtualizadoPor = request.UsuarioId,
         };
 
         var atualizado = await _pagamentoColaboradorRepository.UpdateAsync(pagamento);

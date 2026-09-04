@@ -24,7 +24,8 @@ public class UpdateColaboradorCommandHandler : IRequestHandler<UpdateColaborador
             Telefone = request.Telefone,
             Email = request.Email,
             Ativo = request.Ativo,
-            AtualizadoPor = request.UsuarioId
+            AtualizadoEm = DateTimeOffset.UtcNow,
+            AtualizadoPor = request.UsuarioId,
         };
 
         var atualizado = await _colaboradorRepository.UpdateAsync(colaborador);

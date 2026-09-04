@@ -51,6 +51,7 @@ public class ColaboradorRepository : IColaboradorRepository
         existente.Telefone = colaborador.Telefone;
         existente.Email = colaborador.Email;
         existente.Ativo = colaborador.Ativo;
+        existente.AtualizadoEm = DateTimeOffset.UtcNow;
         existente.AtualizadoPor = colaborador.AtualizadoPor;
 
         await _context.SaveChangesAsync();

@@ -50,6 +50,7 @@ public class ServicoRepository : IServicoRepository
         existente.Descricao = servico.Descricao;
         existente.Preco = servico.Preco;
         existente.Ativo = servico.Ativo;
+        existente.AtualizadoEm = DateTimeOffset.UtcNow;
         existente.AtualizadoPor = servico.AtualizadoPor;
 
         await _context.SaveChangesAsync();

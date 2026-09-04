@@ -24,7 +24,8 @@ public class UpdateProdutoCommandHandler : IRequestHandler<UpdateProdutoCommand,
             PrecoVenda = request.PrecoVenda,
             CustoBase = request.CustoBase,
             Ativo = request.Ativo,
-            AtualizadoPor = request.UsuarioId
+            AtualizadoEm = DateTimeOffset.UtcNow,
+            AtualizadoPor = request.UsuarioId,
         };
 
         var atualizado = await _produtoRepository.UpdateAsync(produto);

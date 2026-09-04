@@ -25,8 +25,8 @@ public class CompraConfiguration : IEntityTypeConfiguration<Compra>
         builder.Property(c => c.ValorTotal).HasColumnName("valor_total").ValueGeneratedOnAddOrUpdate();
         builder.Property(c => c.ValorTotalComEncargos).HasColumnName("valor_total_com_encargos").ValueGeneratedOnAddOrUpdate();
         builder.Property(c => c.DataCompra).HasColumnName("data_compra");
-        builder.Property(c => c.CriadoEm).HasColumnName("criado_em").ValueGeneratedOnAdd();
-        builder.Property(c => c.AtualizadoEm).HasColumnName("atualizado_em").ValueGeneratedOnAddOrUpdate();
+        builder.Property(c => c.CriadoEm).HasColumnName("criado_em");
+        builder.Property(c => c.AtualizadoEm).HasColumnName("atualizado_em");
         builder.Property(c => c.CriadoPor).HasColumnName("criado_por");
         builder.Property(c => c.AtualizadoPor).HasColumnName("atualizado_por");
     }

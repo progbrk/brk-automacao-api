@@ -24,7 +24,8 @@ public class UpdateParceiroCommandHandler : IRequestHandler<UpdateParceiroComman
             Telefone = request.Telefone,
             Email = request.Email,
             PercentualComissao = request.PercentualComissao,
-            AtualizadoPor = request.UsuarioId
+            AtualizadoEm = DateTimeOffset.UtcNow,
+            AtualizadoPor = request.UsuarioId,
         };
 
         var atualizado = await _parceiroRepository.UpdateAsync(parceiro);

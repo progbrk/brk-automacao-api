@@ -25,7 +25,8 @@ public class UpdateVendaCommandHandler : IRequestHandler<UpdateVendaCommand, Res
             Desconto = request.Desconto,
             Status = request.Status,
             DataVenda = request.DataVenda,
-            AtualizadoPor = request.UsuarioId
+            AtualizadoEm = DateTimeOffset.UtcNow,
+            AtualizadoPor = request.UsuarioId,
         };
 
         var atualizada = await _vendaRepository.UpdateAsync(venda);

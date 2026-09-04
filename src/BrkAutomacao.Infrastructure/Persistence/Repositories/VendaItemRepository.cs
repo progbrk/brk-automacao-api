@@ -58,6 +58,7 @@ public class VendaItemRepository : IVendaItemRepository
         existente.ProdutoId = item.ProdutoId;
         existente.Quantidade = item.Quantidade;
         existente.PrecoUnitario = item.PrecoUnitario;
+        existente.AtualizadoEm = DateTimeOffset.UtcNow;
         existente.AtualizadoPor = item.AtualizadoPor;
 
         await _context.SaveChangesAsync();

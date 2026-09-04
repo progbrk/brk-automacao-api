@@ -54,6 +54,7 @@ public class AssinaturaRepository : IAssinaturaRepository
         existente.Status = assinatura.Status;
         existente.DataInicio = assinatura.DataInicio;
         existente.DataFim = assinatura.DataFim;
+        existente.AtualizadoEm = DateTimeOffset.UtcNow;
         existente.AtualizadoPor = assinatura.AtualizadoPor;
 
         await _context.SaveChangesAsync();

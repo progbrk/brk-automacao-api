@@ -23,7 +23,8 @@ public class UpdateVendaItemCommandHandler : IRequestHandler<UpdateVendaItemComm
             ProdutoId = request.ProdutoId,
             Quantidade = request.Quantidade,
             PrecoUnitario = request.PrecoUnitario,
-            AtualizadoPor = request.UsuarioId
+            AtualizadoEm = DateTimeOffset.UtcNow,
+            AtualizadoPor = request.UsuarioId,
         };
 
         var atualizado = await _vendaItemRepository.UpdateAsync(item);

@@ -55,6 +55,7 @@ public class ClienteRepository : IClienteRepository
         existente.Estado = cliente.Estado;
         existente.Cep = cliente.Cep;
         existente.Observacoes = cliente.Observacoes;
+        existente.AtualizadoEm = DateTimeOffset.UtcNow;
         existente.AtualizadoPor = cliente.AtualizadoPor;
 
         await _context.SaveChangesAsync();

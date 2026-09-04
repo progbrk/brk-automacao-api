@@ -27,7 +27,8 @@ public class UpdateAssinaturaCommandHandler : IRequestHandler<UpdateAssinaturaCo
             Status = request.Status,
             DataInicio = request.DataInicio,
             DataFim = request.DataFim,
-            AtualizadoPor = request.UsuarioId
+            AtualizadoEm = DateTimeOffset.UtcNow,
+            AtualizadoPor = request.UsuarioId,
         };
 
         var atualizada = await _assinaturaRepository.UpdateAsync(assinatura);

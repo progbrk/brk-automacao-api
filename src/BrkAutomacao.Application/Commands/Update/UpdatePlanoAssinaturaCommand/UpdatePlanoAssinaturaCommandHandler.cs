@@ -23,7 +23,8 @@ public class UpdatePlanoAssinaturaCommandHandler : IRequestHandler<UpdatePlanoAs
             Descricao = request.Descricao,
             ValorMensal = request.ValorMensal,
             Ativo = request.Ativo,
-            AtualizadoPor = request.UsuarioId
+            AtualizadoEm = DateTimeOffset.UtcNow,
+            AtualizadoPor = request.UsuarioId,
         };
 
         var atualizado = await _planoAssinaturaRepository.UpdateAsync(plano);

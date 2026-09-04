@@ -50,6 +50,7 @@ public class PlanoAssinaturaRepository : IPlanoAssinaturaRepository
         existente.Descricao = plano.Descricao;
         existente.ValorMensal = plano.ValorMensal;
         existente.Ativo = plano.Ativo;
+        existente.AtualizadoEm = DateTimeOffset.UtcNow;
         existente.AtualizadoPor = plano.AtualizadoPor;
 
         await _context.SaveChangesAsync();
