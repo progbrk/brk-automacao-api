@@ -13,6 +13,8 @@ public class CreateEquipamentoCommand : IRequest<ResponseBase<Equipamento>>
     public string? IpVpn { get; set; }
     public string Status { get; set; } = "ativo";
     public DateOnly? DataInstalacao { get; set; }
+    public string? TipoConexao { get; set; }
+    public string? Token { get; set; }
 
     public Guid UsuarioId { get; set; }
 }

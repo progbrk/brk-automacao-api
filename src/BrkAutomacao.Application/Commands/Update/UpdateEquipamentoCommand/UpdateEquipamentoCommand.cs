@@ -14,5 +14,8 @@ public class UpdateEquipamentoCommand : IRequest<ResponseBase<Equipamento>>
     public string? IpVpn { get; set; }
     public string Status { get; set; } = "ativo";
     public DateOnly? DataInstalacao { get; set; }
+    public string? TipoConexao { get; set; }
+    /// <summary>Vazio/nulo numa edição = mantém o token atual.</summary>
+    public string? Token { get; set; }
     public Guid UsuarioId { get; set; }
 }

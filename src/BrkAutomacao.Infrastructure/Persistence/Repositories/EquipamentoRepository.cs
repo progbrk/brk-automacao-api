@@ -53,6 +53,9 @@ public class EquipamentoRepository : IEquipamentoRepository
         existente.IpVpn = equipamento.IpVpn;
         existente.Status = equipamento.Status;
         existente.DataInstalacao = equipamento.DataInstalacao;
+        existente.TipoConexao = equipamento.TipoConexao;
+        if (equipamento.Token is not null)
+            existente.Token = equipamento.Token;
         existente.AtualizadoEm = DateTimeOffset.UtcNow;
         existente.AtualizadoPor = equipamento.AtualizadoPor;
 

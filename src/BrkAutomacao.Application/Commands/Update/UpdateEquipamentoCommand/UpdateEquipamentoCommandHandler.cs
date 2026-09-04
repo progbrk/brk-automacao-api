@@ -26,6 +26,8 @@ public class UpdateEquipamentoCommandHandler : IRequestHandler<UpdateEquipamento
             IpVpn = request.IpVpn,
             Status = request.Status,
             DataInstalacao = request.DataInstalacao,
+            TipoConexao = request.TipoConexao,
+            Token = string.IsNullOrWhiteSpace(request.Token) ? null : request.Token,
             AtualizadoEm = DateTimeOffset.UtcNow,
             AtualizadoPor = request.UsuarioId,
         };

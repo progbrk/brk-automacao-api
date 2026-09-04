@@ -27,6 +27,8 @@ public class EquipamentoConfiguration : IEntityTypeConfiguration<Equipamento>
                 v => v == null ? null : v.ToString());
         builder.Property(e => e.Status).HasColumnName("status");
         builder.Property(e => e.DataInstalacao).HasColumnName("data_instalacao");
+        builder.Property(e => e.TipoConexao).HasColumnName("tipo_conexao");
+        builder.Property(e => e.Token).HasColumnName("token");
         builder.Property(e => e.CriadoEm).HasColumnName("criado_em");
         builder.Property(e => e.AtualizadoEm).HasColumnName("atualizado_em");
         builder.Property(e => e.CriadoPor).HasColumnName("criado_por");

@@ -25,6 +25,8 @@ public class CreateEquipamentoCommandHandler : IRequestHandler<CreateEquipamento
             IpVpn = request.IpVpn,
             Status = request.Status,
             DataInstalacao = request.DataInstalacao,
+            TipoConexao = request.TipoConexao,
+            Token = string.IsNullOrWhiteSpace(request.Token) ? null : request.Token,
             CriadoEm = DateTimeOffset.UtcNow,
             AtualizadoEm = DateTimeOffset.UtcNow,
             CriadoPor = request.UsuarioId,
