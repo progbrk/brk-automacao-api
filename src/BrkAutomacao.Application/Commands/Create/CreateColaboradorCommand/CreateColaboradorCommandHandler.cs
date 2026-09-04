@@ -23,6 +23,8 @@ public class CreateColaboradorCommandHandler : IRequestHandler<CreateColaborador
             Telefone = request.Telefone,
             Email = request.Email,
             Ativo = request.Ativo,
+            CriadoEm = DateTimeOffset.UtcNow,
+            AtualizadoEm = DateTimeOffset.UtcNow,
             CriadoPor = request.UsuarioId,
             AtualizadoPor = request.UsuarioId
         };

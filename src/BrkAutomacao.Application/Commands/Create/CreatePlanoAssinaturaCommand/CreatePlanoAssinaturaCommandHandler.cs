@@ -22,6 +22,8 @@ public class CreatePlanoAssinaturaCommandHandler : IRequestHandler<CreatePlanoAs
             Descricao = request.Descricao,
             ValorMensal = request.ValorMensal,
             Ativo = request.Ativo,
+            CriadoEm = DateTimeOffset.UtcNow,
+            AtualizadoEm = DateTimeOffset.UtcNow,
             CriadoPor = request.UsuarioId,
             AtualizadoPor = request.UsuarioId
         };

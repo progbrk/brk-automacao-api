@@ -25,6 +25,8 @@ public class CreatePagamentoCommandHandler : IRequestHandler<CreatePagamentoComm
             FormaPagamento = request.FormaPagamento,
             Status = request.Status,
             DataPagamento = request.DataPagamento,
+            CriadoEm = DateTimeOffset.UtcNow,
+            AtualizadoEm = DateTimeOffset.UtcNow,
             CriadoPor = request.UsuarioId,
             AtualizadoPor = request.UsuarioId
         };

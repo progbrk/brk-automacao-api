@@ -23,6 +23,8 @@ public class CreatePagamentoColaboradorCommandHandler : IRequestHandler<CreatePa
             Valor = request.Valor,
             Status = request.Status,
             DataPagamento = request.DataPagamento,
+            CriadoEm = DateTimeOffset.UtcNow,
+            AtualizadoEm = DateTimeOffset.UtcNow,
             CriadoPor = request.UsuarioId,
             AtualizadoPor = request.UsuarioId
         };

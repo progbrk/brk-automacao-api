@@ -22,6 +22,8 @@ public class CreateVendaItemCommandHandler : IRequestHandler<CreateVendaItemComm
             ProdutoId = request.ProdutoId,
             Quantidade = request.Quantidade,
             PrecoUnitario = request.PrecoUnitario,
+            CriadoEm = DateTimeOffset.UtcNow,
+            AtualizadoEm = DateTimeOffset.UtcNow,
             CriadoPor = request.UsuarioId,
             AtualizadoPor = request.UsuarioId
         };

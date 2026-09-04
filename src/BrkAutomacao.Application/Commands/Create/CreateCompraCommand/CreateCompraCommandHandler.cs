@@ -26,6 +26,8 @@ public class CreateCompraCommandHandler : IRequestHandler<CreateCompraCommand, R
             Frete = request.Frete,
             Imposto = request.Imposto,
             DataCompra = request.DataCompra ?? DateOnly.FromDateTime(DateTime.UtcNow),
+            CriadoEm = DateTimeOffset.UtcNow,
+            AtualizadoEm = DateTimeOffset.UtcNow,
             CriadoPor = request.UsuarioId,
             AtualizadoPor = request.UsuarioId
         };

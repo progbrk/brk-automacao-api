@@ -23,6 +23,8 @@ public class CreateParceiroCommandHandler : IRequestHandler<CreateParceiroComman
             Telefone = request.Telefone,
             Email = request.Email,
             PercentualComissao = request.PercentualComissao,
+            CriadoEm = DateTimeOffset.UtcNow,
+            AtualizadoEm = DateTimeOffset.UtcNow,
             CriadoPor = request.UsuarioId,
             AtualizadoPor = request.UsuarioId
         };

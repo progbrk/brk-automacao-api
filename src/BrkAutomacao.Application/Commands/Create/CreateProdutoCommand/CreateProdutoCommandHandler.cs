@@ -23,6 +23,8 @@ public class CreateProdutoCommandHandler : IRequestHandler<CreateProdutoCommand,
             PrecoVenda = request.PrecoVenda,
             CustoBase = request.CustoBase,
             Ativo = request.Ativo,
+            CriadoEm = DateTimeOffset.UtcNow,
+            AtualizadoEm = DateTimeOffset.UtcNow,
             CriadoPor = request.UsuarioId,
             AtualizadoPor = request.UsuarioId
         };

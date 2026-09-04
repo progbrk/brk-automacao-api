@@ -22,6 +22,8 @@ public class CreateServicoCommandHandler : IRequestHandler<CreateServicoCommand,
             Descricao = request.Descricao,
             Preco = request.Preco,
             Ativo = request.Ativo,
+            CriadoEm = DateTimeOffset.UtcNow,
+            AtualizadoEm = DateTimeOffset.UtcNow,
             CriadoPor = request.UsuarioId,
             AtualizadoPor = request.UsuarioId
         };

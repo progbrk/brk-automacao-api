@@ -26,6 +26,8 @@ public class CreateAssinaturaCommandHandler : IRequestHandler<CreateAssinaturaCo
             Status = request.Status,
             DataInicio = request.DataInicio ?? DateOnly.FromDateTime(DateTime.UtcNow),
             DataFim = request.DataFim,
+            CriadoEm = DateTimeOffset.UtcNow,
+            AtualizadoEm = DateTimeOffset.UtcNow,
             CriadoPor = request.UsuarioId,
             AtualizadoPor = request.UsuarioId
         };

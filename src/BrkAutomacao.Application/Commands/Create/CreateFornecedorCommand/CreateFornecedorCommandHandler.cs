@@ -22,6 +22,8 @@ public class CreateFornecedorCommandHandler : IRequestHandler<CreateFornecedorCo
             Contato = request.Contato,
             Telefone = request.Telefone,
             Email = request.Email,
+            CriadoEm = DateTimeOffset.UtcNow,
+            AtualizadoEm = DateTimeOffset.UtcNow,
             CriadoPor = request.UsuarioId,
             AtualizadoPor = request.UsuarioId
         };

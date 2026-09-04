@@ -27,6 +27,8 @@ public class CreateClienteCommandHandler : IRequestHandler<CreateClienteCommand,
             Estado = request.Estado,
             Cep = request.Cep,
             Observacoes = request.Observacoes,
+            CriadoEm = DateTimeOffset.UtcNow,
+            AtualizadoEm = DateTimeOffset.UtcNow,
             CriadoPor = request.UsuarioId,
             AtualizadoPor = request.UsuarioId
         };

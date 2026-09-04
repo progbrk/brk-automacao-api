@@ -24,6 +24,8 @@ public class CreateVendaCommandHandler : IRequestHandler<CreateVendaCommand, Res
             Desconto = request.Desconto,
             Status = request.Status,
             DataVenda = request.DataVenda ?? DateOnly.FromDateTime(DateTime.UtcNow),
+            CriadoEm = DateTimeOffset.UtcNow,
+            AtualizadoEm = DateTimeOffset.UtcNow,
             CriadoPor = request.UsuarioId,
             AtualizadoPor = request.UsuarioId
         };
